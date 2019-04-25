@@ -429,37 +429,6 @@ When the count caching is not an option, you may want to use the [countless extr
 
 Pagy implements the [RFC-8288](https://tools.ietf.org/html/rfc8288) compliant http response headers (and other helpers) useful for API pagination: no need to use other dependencies. See the [headers extra](http://ddnexus.github.io/pagy/extras/headers) documentation and examples.
 
-## Using the pagy_info helper
-
-The page info that you get by using the `pagy_info` helper (e.g. "Displaying items __476-500__ of __1000__ in total") is composed by 2 strings stored in the `pagy.yml` locale file:
-
-- the text of the sentence: located at the i18n paths `"pagy.info.single_page"` and `"pagy.info.multiple_pages"` (depending on how many pages compose the pagination)
-- the generic item/model name: located at the i18n path`"pagy.info.item_name"`
-
-While the text part can be always static, you may want the item/model name to be the actual model name, i.e. not just "items" but actually something like "Products" or something specific.
-
-You can do so by setting the `:item_path` variable to the path to lookup in the dictionary file, in one of the following 2 ways:
-
-1. by overriding the `pagy_get_vars` method in your controller (valid for all the Pagy instances) adding the `:item_path`. For example (with ActiveRecord):
-    ```ruby
-    def pagy_get_vars(collection, vars)
-      { count:     collection.count(:all),
-        page:      params[vars[:page_param]||Pagy::VARS[:page_param]],
-        item_path: "activerecord.models.#{collection.model_name.i18n_key}" }.merge!(vars)
-    end
-    ```
-
-2. by passing the variable to the Pagy object, either using the `Pagy::VARS` hash or `Pagy.new` method or `pagy` controller method:
-    ```ruby
-    # all the Pagy instances will have the default
-    Pagy::VARS[:item_path] = 'activerecord.models.product'
-
-    # or single Pagy instance
-    @pagy, @record = pagy(my_scope, item_path: 'activerecord.models.product' )
-    ```
-
-**Notice**: The variables passed to a Pagy object have the precedence over the variables returned by the `pagy_get_vars`. The fastest way is passing a literal string to the `pagy` method, the most convenient way is using `pagy_get_vars`.
-
 ## Maximizing Performance
 
 Here are some tips that will help chosing the best way to use Pagy, depending on your requirements and environment.

@@ -88,7 +88,6 @@ They are all integers:
 | `:params`     | the arbitrary param hash to add to the url. _(see [Customizing the params](../how-to.md#customizing-the-params))_                                                                                | `{}`        |
 | `:anchor`     | the arbitrary anchor string (including the "#") to add to the url. _(see [Customizing the params](../how-to.md#customizing-the-params))_                                                         | `""`        |
 | `:link_extra` | the extra attributes string (formatted as a valid HTML attribute/value pairs) added to the page links _(see [Customizing the link attributes](../how-to.md#customizing-the-link-attributes))_    | `""`        |
-| `:item_path`  | the dictionary path used by the `pagy_info` method to lookup the item/model name _(see [Using the pagy info helper](../how-to.md#using-the-pagy_info-helper))_                                   | `""`        |
 | `:cycle`      | enable cycling/circular/infinite pagination: `true` sets `next` to `1` when the current page is the last page                                                                                    | `false`     |
 
 There is no specific validation for non-instance variables.

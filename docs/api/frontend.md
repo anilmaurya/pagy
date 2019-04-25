@@ -58,13 +58,7 @@ Will produce something like:
 Displaying items <b>476-500</b> of <b>1000</b> in total
 ```
 
-Or, if you provide the `:item_path` variable for the Product model, it will produce a model-specific output like:
-
-```HTML
-Displaying Products <b>476-500</b> of <b>1000</b> in total
-```
-
-See also [Using the pagy_info helper](../how-to.md#using-the-pagy_info-helper).
+See also [pagy_collection_info](../extras/i18n.md#pagy_collection_infopagy) method for a less generic helper.
 
 ### pagy_url_for(page, pagy)
 

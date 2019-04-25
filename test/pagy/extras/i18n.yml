@@ -1,0 +1,14 @@
+en:
+  pagy:
+    collection_info:
+      no_items: "No %{collection_item} found"
+      single_page:
+        one: "Displaying <b>1</b> %{collection_item}"
+        other: "Displaying <b>all %{count}</b> %{collection_item}"
+      multiple_pages: "Displaying %{collection_item} <b>%{from}-%{to}</b> of <b>%{count}</b> in total"
+
+  activerecord:
+    models:
+      product:
+        one: Product
+        other: Products

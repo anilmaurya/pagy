@@ -1,3 +1,5 @@
+# :other pluralization (see https://github.com/ddnexus/pagy/blob/master/lib/locales/utils/p11n.rb)
+
 id:
   pagy:
     nav:
@@ -5,16 +7,8 @@ id:
       next: "Selanjutnya&nbsp;&rsaquo;"
       gap: "&hellip;"
     info:
-      single_page:
-        zero: "Tidak ditemukan %{item_name}"
-        one: "Menampilkan <b>1</b> %{item_name}"
-        other: "Menampilkan <b>semua %{count}</b> %{item_name}"
-      multiple_pages: "Menampilkan %{item_name} <b>%{from}-%{to}</b> dari total <b>%{count}</b>"
-      item_name:
-        zero: "item"
-        one: "item"
-        other: "item"
-    compact: "Halaman %{page_input} dari %{pages}"
-    items:
-      one: "Tampilkan %{items_input} item per halaman"
-      other: "Tampilkan %{items_input} item per halaman"
+      no_items: "Tidak ditemukan item"
+      single_page: "Menampilkan <b>%{count}</b> item"
+      multiple_pages: "Menampilkan item <b>%{from}-%{to}</b> dari total <b>%{count}</b>"
+    combo_nav_js: "Halaman %{page_input} dari %{pages}"
+    items_selector_js: "Tampilkan %{items_input} item per halaman"

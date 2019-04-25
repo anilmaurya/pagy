@@ -1,3 +1,5 @@
+# :one_other pluralization (see https://github.com/ddnexus/pagy/blob/master/lib/locales/utils/p11n.rb)
+
 de:
   pagy:
     nav:
@@ -5,16 +7,12 @@ de:
       next: "Weiter&nbsp;&rsaquo;"
       gap: "&hellip;"
     info:
+      no_items: "Kein Einträge gefunden"
       single_page:
-        zero: "Kein %{item_name} gefunden"
-        one: "Zeige <b>1</b> %{item_name}"
-        other: "Zeige <b>alle %{count}</b> %{item_name}"
-      multiple_pages: "Zeige %{item_name} <b>%{from}-%{to}</b> von <b>%{count}</b> gesamt"
-      item_name:
-        zero: "Eintrag"
-        one: "Eintrag"
-        other: "Einträge"
-    compact: "Seite %{page_input} von %{pages}"
-    items:
+        one: "Zeige <b>1</b> Eintrag"
+        other: "Zeige <b>alle %{count}</b> Einträge"
+      multiple_pages: "Zeige Einträge <b>%{from}-%{to}</b> von <b>%{count}</b> gesamt"
+    combo_nav_js: "Seite %{page_input} von %{pages}"
+    items_selector_js:
       one: "Zeige %{items_input} Eintrag pro Seite"
       other: "Zeige %{items_input} Einträge pro Seite"

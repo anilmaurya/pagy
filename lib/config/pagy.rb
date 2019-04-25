@@ -109,7 +109,6 @@
 # Pagy::VARS[:params]     = {}                              # default
 # Pagy::VARS[:anchor]     = '#anchor'                       # example
 # Pagy::VARS[:link_extra] = 'data-remote="true"'            # example
-# Pagy::VARS[:item_path]  = 'activerecord.models.product'   # example
 
 
 # Rails
@@ -154,3 +153,4 @@
 # than the default pagy internal i18n (see above)
 # See https://ddnexus.github.io/pagy/extras/i18n
 # require 'pagy/extras/i18n'
+# Pagy::VARS[:collection_path] = 'activerecord.models.product'   # example

@@ -14,5 +14,14 @@ class Pagy
     def pagy_t_with_i18n(*args) ::I18n.t(*args) end
     alias :pagy_t :pagy_t_with_i18n
 
+    # Return example: "Displaying Products 41-60 of 324 in total"
+    def pagy_collection_info(pagy)
+      path = if (count = pagy.count) == 0 ; 'pagy.collection_info.no_items'
+             else pagy.pages == 1 ? 'pagy.collection_info.single_page' : 'pagy.collection_info.multiple_pages'
+             end
+      collection_item = pagy_t(pagy.vars[:collection_path], count: count)
+      pagy_t(path, collection_item: collection_item, count: count, from: pagy.from, to: pagy.to)
+    end
+
   end
 end
